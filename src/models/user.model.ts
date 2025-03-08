@@ -1,17 +1,13 @@
-
-import { DataTypes, Model, Optional } from 'sequelize';
+import { DataTypes, Model, InferAttributes, InferCreationAttributes, CreationOptional } from 'sequelize';
 import sequelize from '../config/sequelize';
-import { User } from '../interfaces/user.interface';
 
-interface UserCreationAttributes extends Optional<User, 'id' | 'createdAt' | 'updatedAt'> { }
-
-class UserModel extends Model<User, UserCreationAttributes> implements User {
-  public id!: number;
-  public name!: string;
-  public email!: string;
-  public password!: string;
-  public readonly createdAt!: Date;
-  public readonly updatedAt!: Date;
+class UserModel extends Model<InferAttributes<UserModel>, InferCreationAttributes<UserModel>> {
+  declare id: CreationOptional<number>;
+  declare name: string;
+  declare email: string;
+  declare password: string;
+  declare readonly createdAt: CreationOptional<Date>;
+  declare readonly updatedAt: CreationOptional<Date>;
 }
 
 UserModel.init(
@@ -29,10 +25,23 @@ UserModel.init(
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
+      validate: {
+        isEmail: true,
+      },
     },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
   },
   {
