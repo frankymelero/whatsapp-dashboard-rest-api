@@ -25,7 +25,10 @@ npm install
 ```
 
 ### 3️⃣ Set Up Environment Variables
-Create a `.env` file in the root directory and add the following:
+
+Rename .env.example file to `.env`, and fill same with the required information.
+
+Or create a `.env` file in the root directory and add the following:
 ```
 PORT=desired_port
 DB_URL=your_pg_connection_url
