@@ -33,15 +33,15 @@ CaptionModel.init(
       allowNull: false,
     },
     shareddate: {
-      type: DataTypes.DATE, // Campo personalizado sharedDate
-      allowNull: false,
+      type: DataTypes.DATE, 
+      allowNull: true,
     },
   },
   {
     sequelize,
     modelName: 'Caption',
-    tableName: 'captions', // Nombre correcto de la tabla
-    timestamps: true, // Esto asegura que `createdAt` y `updatedAt` sean gestionados por Sequelize
+    tableName: 'captions', 
+    timestamps: true, 
   }
 );
 

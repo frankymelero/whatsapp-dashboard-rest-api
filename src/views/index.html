@@ -1,114 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sudoku API</title>
-    <style>
-        *{
-            margin: 0px;
-            line-height: 1.8;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }
-        table{
-            border-collapse: collapse;
-        }
-        pre{
-            line-height: 0.4;
-            color: white;
-            background-color: gray;
-            border-radius: 4px;
-            padding: 20px;
-        }
-        td{
-            border: 1px solid black;
-            text-align: center;
-            padding: 10px;
-        }
-        td:nth-child(1){
-            font-weight: bold;
-        }
-        .main-centered{
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            row-gap: 10px;
-        }
-        a{
-            color: black;
-            text-decoration: none;
-        }
-        a.gh{
-            color: black;
-            font-size: 24px;
-        }
-    </style>
+    <title>API VIEW</title>
 </head>
 <body>
-    <section class="main-centered">
-    <h1>Welcome to Sudoku API</h1>
-    <h2>Endpoints</h2>
-  <table>
-    <tr>
-        <th>Endpoint</th>
-        <th>Method</th>
-        <th>Description</th>
-        <th>Params</th>
-    </tr>
-    <tr>
-        <td>/</td>
-        <td>GET</td>
-        <td>Main API page</td>
-        <td>NO</td>
-    </tr>
-    <tr>
-        <td><a href="/api/v1/sudoku/get-all">/api/v1/sudoku/get-all</a></td>
-        <td>GET</td>
-        <td>Retrieves all Sudokus in the DB</td>
-        <td>NO</td>
-       
-    </tr>
-
-    <tr>
-        <td><a href="/api/v1/sudoku/get-by-difficulty/easy">/api/v1/sudoku/get-by-difficulty/:difficulty</a></td>
-        <td>GET</td>
-        <td>Retrieves all Sudokus with the received difficulty</td>
-        <td>YES</td>
-    </tr>
-    <tr>
-        <td>/api/v1/sudoku/get-one/:id</td>
-        <td>GET</td>
-        <td>Retrieves a sudoku with the received id</td>
-        <td>YES</td>
-    </tr>
-    <tr>
-        <td><a href="/api/v1/sudoku/get-random/">/api/v1/sudoku/get-random/</a></td>
-        <td>GET</td>
-        <td>Retrieves a random Sudoku with random difficulty</td>
-        <td>NO</td>
-    </tr>
-    <tr>
-        <td><a href="/api/v1/sudoku/get-random-by-difficulty/easy">/api/v1/sudoku/get-random-by-difficulty/:difficulty</a></td>
-        <td>GET</td>
-        <td>Retrieves a random sudoku with received difficulty</td>
-        <td>YES</td>
-    </tr>
-    </table>
-    <h2>Additional information</h2>
-    <p>· 5 new sudokus are added daily via Cron Job. </p>
-    <p>· /get-all endpoint will be deactivated upon 300 registers. Once We reach the limit, the data received will be paginated and the endpoint will be modificated to select the page and number of results.</p>
-    <h2>Data format:</h2>
-    <pre>
-    <p>{</p>
-    <p>"_id": "generated id",</p>
-    <p>"board": "--74916-5,2---6-3-9,-----7-1-,-586----4,--3----9-,--62--187,9-4-7---2,67-83----,81--45---",</p>
-    <p>"solution": "387491625,241568379,569327418,758619234,123784596,496253187,934176852,675832941,812945763",</p>
-    <p>"difficulty": "hard"</p>
-    <p>}</p>
-</pre>
-<a href="https://github.com/frankymelero/sudoku-api-ts" class="gh" target="_blank">Github Repository</a>
-</section>
+ <h1>Running...</h1>   
 </body>
 </html>
-
-

@@ -1,9 +1,26 @@
-// src/routes/auth.ts
 import { Router } from 'express';
-import { addCaptionController } from '../controllers/caption.controller';
+import {
+  addCaptionController,
+  getAllCaptionsController,
+  getCaptionsByUrlTypeController,
+  getMostRecentCaptionsController,
+  updateCaptionController,
+  deleteCaptionController,
+} from '../controllers/caption.controller';
+import { checkJwt } from '../middlewares/session';
 
 const router = Router();
 
-router.post('/add', addCaptionController);
+router.post('/add', checkJwt, addCaptionController);
 
-export { router }; 
+router.get('/', checkJwt, getAllCaptionsController);
+
+router.get('/urltype/:urltype', checkJwt, getCaptionsByUrlTypeController);
+
+router.get('/recent', checkJwt, getMostRecentCaptionsController);
+
+router.put('/:id', checkJwt, updateCaptionController);
+
+router.delete('/:id', checkJwt, deleteCaptionController);
+
+export { router };
