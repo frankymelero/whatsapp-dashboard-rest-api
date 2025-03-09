@@ -5,19 +5,17 @@ if (process.env.NODE_ENV !== 'production') {
   dotenv.config();
 }
 
-// Conexión a Vercel Postgres
 const sequelize = new Sequelize(process.env.DATABASE_URL!, {
   dialect: 'postgres',
-  logging: false, // Desactiva logs en producción
+  logging: false, 
   dialectOptions: {
     ssl: {
-      require: true, // Necesario para Vercel Postgres
-      rejectUnauthorized: false, // Evita errores de certificado en algunos casos
+      require: true, 
+      rejectUnauthorized: false, 
     },
   },
 });
 
-// Opcional: Verificar la conexión al iniciar
 (async () => {
   try {
     await sequelize.authenticate();
