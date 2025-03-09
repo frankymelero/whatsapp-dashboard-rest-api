@@ -3,4 +3,5 @@ export interface Caption {
     url: string;
     title?: string;
     urltype: string;
+    shareddate?: Date;
     }

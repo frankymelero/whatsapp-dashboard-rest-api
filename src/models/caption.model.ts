@@ -1,15 +1,15 @@
-
-import { DataTypes, Model } from 'sequelize';
+import { DataTypes, Model, CreationOptional } from 'sequelize';
 import sequelize from '../config/sequelize';
 import { Caption } from '../interfaces/caption.interface';
 
-class CaptionModel extends Model<Caption> implements Caption {
-  public id!: number;
-  public url!: string;
-  public title!: string;
-  public urltype!: string;
-  public readonly createdAt!: Date;
-  public readonly updatedAt!: Date;
+class CaptionModel extends Model<Caption> {
+  declare id: CreationOptional<number>;
+  declare url: string;
+  declare title: string;
+  declare urltype: string;
+  declare shareddate: Date;
+  declare readonly createdAt: CreationOptional<Date>;
+  declare readonly updatedAt: CreationOptional<Date>;
 }
 
 CaptionModel.init(
@@ -32,12 +32,16 @@ CaptionModel.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    shareddate: {
+      type: DataTypes.DATE, // Campo personalizado sharedDate
+      allowNull: false,
+    },
   },
   {
     sequelize,
     modelName: 'Caption',
-    tableName: 'captions',
-    timestamps: true,
+    tableName: 'captions', // Nombre correcto de la tabla
+    timestamps: true, // Esto asegura que `createdAt` y `updatedAt` sean gestionados por Sequelize
   }
 );
 
