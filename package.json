@@ -1,5 +1,5 @@
 {
-  "name": "my-express-app",
+  "name": "whatsapp-dashboard-rest-api",
   "version": "1.0.0",
   "description": "A simple Express.js application with TypeScript",
   "main": "dist/app.js",
@@ -9,7 +9,11 @@
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["express", "typescript", "node"],
+  "keywords": [
+    "express",
+    "typescript",
+    "node"
+  ],
   "author": "Tu Nombre <tu@email.com>",
   "license": "MIT",
   "dependencies": {
