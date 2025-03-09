@@ -40,7 +40,7 @@ JWT_SECRET=your_secret
 npm run dev
 ```
 
-The API will be running on `http://localhost:5000` (or your configured port).
+The API will be running on `http://localhost:3000` (or your configured port).
 
 ---
 
